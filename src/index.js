@@ -1,8 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import moment from 'moment';
+import { IntlProvider } from 'react-intl';
+import Routes from './routes/route.index'
+import GlobalStyle from './atomic/globalstyled';
 import * as serviceWorker from './serviceWorker';
+
+import koreanString from './locale/ko';
+
+// global.Intl = require('intl');
+
+// moment js locale 설정.
+moment.locale('kr', {
+  weekdaysShort: ['일', '월', '화', '수', '목', '금', '토'],
+});
+// addLocaleData([...en, ...ko]);
+/*
+<IntlProvider locale="ko" messages={koreanString}>
+      <ApolloProvider client={client}>
+        <Routes />
+      </ApolloProvider>
+    </IntlProvider>
+    <OdocToastContainer />
+    <GlobalStyle />
+ */
+
+const App = () => (
+  <React.Fragment>
+    <IntlProvider locale="ko" messages={koreanString}>
+      <div>hi</div>
+      <Routes />
+    </IntlProvider>
+    <GlobalStyle />
+  </React.Fragment>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
