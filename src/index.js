@@ -4,6 +4,7 @@ import moment from 'moment';
 import { IntlProvider } from 'react-intl';
 import Routes from './routes/route.index'
 import GlobalStyle from './atomic/globalstyled';
+import { StyledBody } from './atomic/body';
 import * as serviceWorker from './serviceWorker';
 
 import koreanString from './locale/ko';
@@ -28,8 +29,11 @@ moment.locale('kr', {
 const App = () => (
   <React.Fragment>
     <IntlProvider locale="ko" messages={koreanString}>
-      <div>hi</div>
-      <Routes />
+      <div>여기는 글로벌 헤드이다 우하하</div>
+        <StyledBody>
+            <Routes />
+        </StyledBody>
+
     </IntlProvider>
     <GlobalStyle />
   </React.Fragment>
