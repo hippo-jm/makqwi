@@ -13,7 +13,6 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
       ${css(...args)};
     }
   `;
-
   return acc;
 }, {});
 
@@ -170,6 +169,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 10px;
     color: #333;
   }
+
+  html, body {
+    height: 100%;
+  }
+  
 
   body,
   html {
